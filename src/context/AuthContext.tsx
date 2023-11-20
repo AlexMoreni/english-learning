@@ -12,9 +12,5 @@ export function AuthProvider({ children, value }: AuthContextProps) {
 }
 
 export function useAuthValue() {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error("useAuthValue deve ser usado dentro de um AuthProvider");
-  }
-  return context;
+  return useContext(AuthContext);
 }

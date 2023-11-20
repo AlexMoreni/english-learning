@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 import { useAuthentication } from "../hooks/useAuthentication";
-import { useAuthValue } from "../context/AuthContext";
 
-export function Navbar() {
-  const { user } = useAuthValue() ?? { user: undefined };
+export function Navbar({ user }: any) {
+  const { logout } = useAuthentication();
+
   return (
     <nav className={styles.navbar}>
       <NavLink to="/" className={styles.brand}>
@@ -15,6 +15,14 @@ export function Navbar() {
       <ul className={styles.links_list}>
         {!user && (
           <>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? styles.active : "")}
+              >
+                Home
+              </NavLink>
+            </li>
             <li>
               <NavLink
                 to="/login"
@@ -63,13 +71,10 @@ export function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/logout"
-                className={({ isActive }) => (isActive ? styles.active : "")}
-              >
-                <img src="log-out.svg" alt="Log Out" />
-                Log Out
-              </NavLink>
+              <button className="" onClick={() => logout()}>
+                <img src="log-out.svg" alt="log-out" />
+                Sair
+              </button>
             </li>
           </>
         )}

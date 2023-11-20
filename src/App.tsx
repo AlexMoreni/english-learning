@@ -41,7 +41,7 @@ function App() {
   return (
     <AuthProvider value={user}>
       <Router>
-        <Navbar />
+        <Navbar user={user} />
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />}></Route>

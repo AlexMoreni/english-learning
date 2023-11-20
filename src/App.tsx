@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import "./App.css";
 import { onAuthStateChanged } from "firebase/auth";
 
@@ -9,6 +14,10 @@ import { Footer } from "./components/Footer.tsx";
 //Pages
 import { Home } from "./pages/Home/Home.tsx";
 import { Register } from "./pages/Register/Register.tsx";
+import { Login } from "./pages/Login/Login.tsx";
+import { Dashboard } from "./pages/Dashboard/Dashboard.tsx";
+import { Dictionary } from "./pages/Dictionary/Dictionary.tsx";
+import { Explore } from "./pages/Explore/Explore.tsx";
 
 //hooks
 import { useState, useEffect } from "react";
@@ -36,7 +45,26 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/register" element={<Register />}></Route>
+            <Route
+              path="/register"
+              element={!user ? <Register /> : <Navigate to="/dashboard" />}
+            ></Route>
+            <Route
+              path="/login"
+              element={!user ? <Login /> : <Navigate to="/dashboard" />}
+            ></Route>
+            <Route
+              path="/dashboard"
+              element={user ? <Dashboard /> : <Navigate to="/login" />}
+            ></Route>
+            <Route
+              path="/dictionary"
+              element={user ? <Dictionary /> : <Navigate to="/login" />}
+            ></Route>
+            <Route
+              path="/explore"
+              element={user ? <Explore /> : <Navigate to="/login" />}
+            ></Route>
           </Routes>
         </div>
         <Footer />

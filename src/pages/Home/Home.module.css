@@ -1,0 +1,39 @@
+.container_content {
+  min-height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5em;
+}
+
+.container_content div {
+  width: 545px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container_content div h1 {
+  width: 545px;
+  font-size: 3.2em;
+  margin-bottom: 18px;
+}
+
+.container_content div p {
+  color: #73737b;
+  font-size: 1.2em;
+  line-height: 30px;
+}
+
+.container_content div button {
+  border: none;
+  padding: 15px 20px;
+  border-radius: 7px;
+  background: #5b51de;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.container_content div button:hover {
+  background-color: rgb(67, 58, 199);
+}

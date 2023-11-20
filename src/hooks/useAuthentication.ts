@@ -3,12 +3,18 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
   signOut,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 import { db } from "../firebase/config.js";
 
 console.log(db);
 
 import { useState, useEffect } from "react";
+
+interface User {
+  email: string;
+  password: string;
+}
 
 export const useAuthentication = () => {
   const [error, setError] = useState<string | null | boolean>(null);
@@ -57,6 +63,21 @@ export const useAuthentication = () => {
     signOut(auth);
   };
 
+  const login = async (data: User) => {
+    checkIfIsCancelled();
+
+    setLoading(true);
+    setError(false);
+
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+      setLoading(false);
+    } catch {
+      setError("Incorrect username or password!");
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     return () => setCancelled(true);
   }, []);
@@ -67,5 +88,6 @@ export const useAuthentication = () => {
     error,
     loading,
     logout,
+    login,
   };
 };

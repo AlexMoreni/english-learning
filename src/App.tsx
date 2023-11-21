@@ -18,6 +18,7 @@ import { Login } from "./pages/Login/Login.tsx";
 import { Dashboard } from "./pages/Dashboard/Dashboard.tsx";
 import { Dictionary } from "./pages/Dictionary/Dictionary.tsx";
 import { Explore } from "./pages/Explore/Explore.tsx";
+import { CreateWord } from "./pages/CreateWord/CreateWord.tsx";
 
 //hooks
 import { useState, useEffect } from "react";
@@ -37,6 +38,8 @@ function App() {
       setUser(user);
     });
   }, [auth]);
+
+  console.log(user);
 
   return (
     <AuthProvider value={user}>
@@ -64,6 +67,12 @@ function App() {
             <Route
               path="/explore"
               element={user ? <Explore /> : <Navigate to="/login" />}
+            ></Route>
+            <Route
+              path="/word/create"
+              element={
+                user ? <CreateWord user={user} /> : <Navigate to="/login" />
+              }
             ></Route>
           </Routes>
         </div>

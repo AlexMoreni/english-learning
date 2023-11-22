@@ -19,3 +19,44 @@
 .header a:hover {
   background-color: rgb(67, 58, 199);
 }
+
+.dictionary form {
+  max-width: 60%;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.dictionary form input {
+  font-size: 1.2rem;
+  width: 100%;
+  border: 3px solid #242730;
+  padding: 0.8em 10px;
+  border-radius: 10px;
+}
+
+.dictionary .info {
+  padding-left: 2em;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.dictionary .info span {
+  color: #5b51de;
+}
+
+.dictionary .container_cards {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.not_found_words {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}

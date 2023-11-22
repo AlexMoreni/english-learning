@@ -62,7 +62,9 @@ function App() {
             ></Route>
             <Route
               path="/dictionary"
-              element={user ? <Dictionary /> : <Navigate to="/login" />}
+              element={
+                user ? <Dictionary user={user} /> : <Navigate to="/login" />
+              }
             ></Route>
             <Route
               path="/explore"

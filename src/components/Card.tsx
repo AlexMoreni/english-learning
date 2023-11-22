@@ -8,13 +8,16 @@ import { IoIosEyeOff } from "react-icons/io";
 
 import { FaRegTrashAlt } from "react-icons/fa";
 
+import { useDeleteDocument } from "../hooks/useDeleteDocument";
+
 interface CardData {
   word: string;
   translation: string;
   image: string;
+  id: string;
 }
 
-export function Card({ word, translation, image }: CardData) {
+export function Card({ word, translation, image, id }: CardData) {
   const [voice, setVoice] = useState<any>(null);
   const [showWord, setShowWord] = useState<boolean>(false);
 
@@ -32,6 +35,8 @@ export function Card({ word, translation, image }: CardData) {
 
     window.speechSynthesis.speak(utterance);
   };
+
+  const { deleteDocument } = useDeleteDocument("words");
 
   useEffect(() => {
     const voices = window.speechSynthesis?.getVoices();
@@ -58,7 +63,10 @@ export function Card({ word, translation, image }: CardData) {
         ) : (
           <IoIosEyeOff onClick={() => setShowWord(true)} />
         )}
-        <FaRegTrashAlt className={styles.trash} />
+        <FaRegTrashAlt
+          className={styles.trash}
+          onClick={() => deleteDocument(id)}
+        />
       </div>
     </div>
   );

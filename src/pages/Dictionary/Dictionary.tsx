@@ -38,7 +38,7 @@ export function Dictionary({ user }: any) {
         {words ? (
           words.length === 1 ? (
             <p className={styles.info}>
-              Muito bem {user.displayName}, você já conhece <span>1</span>
+              Muito bem {user.displayName}, você já conhece <span>1</span>{" "}
               palavra.
             </p>
           ) : (
@@ -64,6 +64,7 @@ export function Dictionary({ user }: any) {
                 word={word.word}
                 translation={word.translation}
                 image={word.image}
+                id={word.id}
               />
             ))}
 
@@ -71,7 +72,7 @@ export function Dictionary({ user }: any) {
             <div className={styles.not_found_words}>
               <p>Nenhuma palavra encontrada</p>
               <Link className="btn" to="/word/create">
-                Criar sua primeira palavra
+                Criar
               </Link>
             </div>
           )}

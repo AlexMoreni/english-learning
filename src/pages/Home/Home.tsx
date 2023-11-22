@@ -6,12 +6,12 @@ export function Home() {
       <div className={styles.container_content}>
         <img src="illustrations-home.png" alt="" />
         <div>
-          <h1>Effective English learning for any age</h1>
+          <h1>Aprendizagem eficaz de inglês para qualquer idade</h1>
           <p>
-            Flexible learning times and materials for all levels will have you
-            speaking with confidence in no time.
+            Tempos de aprendizagem flexíveis e materiais para todos os níveis
+            farão com que você fale com confiança rapidamente.
           </p>
-          <button>Get Started</button>
+          <button>Comece a aprender</button>
         </div>
       </div>
       <div
@@ -19,14 +19,14 @@ export function Home() {
         style={{ justifyContent: "space-around" }}
       >
         <div>
-          <h1>Learn English for everyday situations</h1>
+          <h1>Aprenda inglês para situações cotidianas</h1>
           <p>
-            You will have a complete teaching experience, which will allow you
-            to progress from scratch to fluency in English. With this content,
-            you will feel confident to understand, speak well and be understood
-            anywhere in the world.
+            Você terá uma experiência de ensino completa, que lhe permitirá
+            progredir do zero até a fluência em inglês. Com esse conteúdo você
+            se sentirá confiante para entender, falar bem e ser compreendido em
+            qualquer lugar do mundo.
           </p>
-          <button>Start learning</button>
+          <button>Comece a aprender</button>
         </div>
         <img src="illustration-ads.png" alt="" />
       </div>

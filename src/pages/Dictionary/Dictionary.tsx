@@ -21,8 +21,8 @@ export function Dictionary({ user }: any) {
   return (
     <>
       <header className={styles.header}>
-        <h1>Dictionary</h1>
-        <Link to="/word/create" title="Add new word">
+        <h1>Dicionário</h1>
+        <Link to="/word/create" title="Adicionar nova palavra">
           +
         </Link>
       </header>
@@ -30,17 +30,33 @@ export function Dictionary({ user }: any) {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="Words search..."
+            placeholder="Procurar palavras..."
             onChange={(e) => setQuery(e.target.value)}
           />
           <button className="btn btn-datk">Pesquisar</button>
         </form>
-        <p className={styles.info}>
-          Muito bem {user.displayName}, você já conhece{" "}
-          <span>{words.length}</span> palavras
-        </p>
+        {words ? (
+          words.length === 1 ? (
+            <p className={styles.info}>
+              Muito bem {user.displayName}, você já conhece <span>1</span>
+              palavra.
+            </p>
+          ) : (
+            <p>
+              <p className={styles.info}>
+                Muito bem {user.displayName}, você já conhece{" "}
+                <span>{words.length}</span> palavras.
+              </p>
+            </p>
+          )
+        ) : (
+          <p className={styles.info}>
+            Você ainda não adicionou nenhuma palavra. Vamos lá, comece agora!
+          </p>
+        )}
+
         <div className={styles.container_cards}>
-          {loading && <p>Loading...</p>}
+          {loading && <p>Carregando...</p>}
           {words &&
             words.map((word: any) => (
               <Card
@@ -53,9 +69,9 @@ export function Dictionary({ user }: any) {
 
           {words && words.length === 0 && (
             <div className={styles.not_found_words}>
-              <p>No words found</p>
+              <p>Nenhuma palavra encontrada</p>
               <Link className="btn" to="/word/create">
-                Create first word
+                Criar sua primeira palavra
               </Link>
             </div>
           )}

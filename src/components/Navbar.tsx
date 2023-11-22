@@ -36,7 +36,7 @@ export function Navbar({ user }: any) {
                 to="/register"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
-                Register
+                Registre-se
               </NavLink>
             </li>
           </>
@@ -58,7 +58,7 @@ export function Navbar({ user }: any) {
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 <img src="explore.svg" alt="Explore" />
-                Explore
+                Explorar
               </NavLink>
             </li>
             <li>
@@ -67,7 +67,7 @@ export function Navbar({ user }: any) {
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 <img src="book.svg" alt="Book" />
-                Dictionary
+                Dicionário
               </NavLink>
             </li>
             <li>

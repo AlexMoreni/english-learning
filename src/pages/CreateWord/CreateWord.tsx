@@ -39,51 +39,51 @@ export function CreateWord({ user }: any) {
       createdBy: user.displayName,
     });
 
-    navigate("/");
+    navigate("/dictionary");
   };
 
   return (
     <div className={styles.create_word}>
-      <h2>Create Word</h2>
-      <p>Add a new word to your dictionary</p>
+      <h2>Criar palavras</h2>
+      <p>Adicione uma nova palavra ao seu dicionário</p>
       <form onSubmit={handleSubmit}>
         <label>
-          <span>Word:</span>
+          <span>Palvra:</span>
           <input
             type="text"
             name="word"
             required
-            placeholder="What's the word?"
+            placeholder="Qual é a palavra"
             onChange={(e) => setWord(e.target.value)}
             value={word}
           />
         </label>
         <label>
-          <span>Translation:</span>
+          <span>Tradução:</span>
           <input
             type="text"
             name="translation"
             required
-            placeholder="Insira uma imagem"
+            placeholder="Qual é a tradução"
             onChange={(e) => setTranslation(e.target.value)}
             value={translation}
           />
         </label>
         <label>
-          <span>URL image:</span>
+          <span>URL imagem:</span>
           <input
             type="text"
             name="image"
             required
-            placeholder="Insert the image"
+            placeholder="Insira uma imagem"
             onChange={(e) => setImage(e.target.value)}
             value={image}
           />
         </label>
-        {!response.loading && <button className="btn">Save</button>}
+        {!response.loading && <button className="btn">Salvar</button>}
         {response.loading && (
           <button className="btn" disabled>
-            Loading...
+            Carregando...
           </button>
         )}
         {response.error && <p className="error">{response.error}</p>}

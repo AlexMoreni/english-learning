@@ -29,9 +29,7 @@ export function Register() {
       return;
     }
 
-    const res = await createUser(user);
-
-    console.log(res);
+    await createUser(user);
   };
 
   useEffect(() => {
@@ -42,16 +40,16 @@ export function Register() {
 
   return (
     <div className={styles.register}>
-      <h1>Register to learn</h1>
-      <p>Create your username and start learning English</p>
+      <h1>Registre-se para aprender</h1>
+      <p>Crie sua conta e comece a aprender inglês</p>
       <form onSubmit={handleSubmit}>
         <label>
-          <span>Name:</span>
+          <span>Nome:</span>
           <input
             type="text"
             name="displayNome"
             required
-            placeholder="Name of user"
+            placeholder="Seu nome"
             value={displayName}
             onChange={(e) => setDisplayName(e.target.value)}
           />
@@ -62,34 +60,34 @@ export function Register() {
             type="email"
             name="email"
             required
-            placeholder="E-mail of user"
+            placeholder="Seu melhor email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
         <label>
-          <span>Password:</span>
+          <span>Senha:</span>
           <input
             type="password"
             name="password"
             required
-            placeholder="Enter your password"
+            placeholder="Coloque sua senha"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
         <label>
-          <span>Confirm your password:</span>
+          <span>Confirme sua senha:</span>
           <input
             type="password"
             name="confirmPassword"
             required
-            placeholder="Confirm your password"
+            placeholder="Confirme sua senha"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </label>
-        {!loading && <button className="btn">Register</button>}
+        {!loading && <button className="btn">Cadastrar</button>}
         {loading && (
           <button className="btn" disabled>
             Aguarde...

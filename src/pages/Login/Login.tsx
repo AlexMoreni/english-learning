@@ -31,7 +31,7 @@ export function Login() {
   return (
     <div className={styles.login}>
       <h1>Login</h1>
-      <p>Log in to start your learning</p>
+      <p>Faça login para iniciar seu aprendizado</p>
       <form onSubmit={handleSubmit}>
         <label>
           <span>Email:</span>
@@ -39,18 +39,18 @@ export function Login() {
             type="email"
             name="email"
             required
-            placeholder="E-mail of user"
+            placeholder="E-mail do usuário"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
         <label>
-          <span>Password:</span>
+          <span>Senha:</span>
           <input
             type="password"
             name="password"
             required
-            placeholder="Enter your password"
+            placeholder="Coloque sua senha"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -58,7 +58,7 @@ export function Login() {
         {!loading && <button className="btn">Entrar</button>}
         {loading && (
           <button className="btn" disabled>
-            Loading...
+            Carregando...
           </button>
         )}
         {error && <p className="error">{error}</p>}

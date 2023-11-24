@@ -1,0 +1,20 @@
+.explore {
+  padding: 0 2rem;
+}
+
+.explore section h1 {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #242730;
+  border-radius: 5px;
+  width: 100px;
+  padding: 10px 2em;
+  text-align: center;
+}
+
+.explore section div {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}

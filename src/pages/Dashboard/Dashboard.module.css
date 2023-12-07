@@ -1,0 +1,54 @@
+.header {
+  height: 30vh;
+  display: flex;
+  padding: 0 2rem;
+  justify-content: space-between;
+}
+
+.header .cards {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header .cards div {
+  width: 300px;
+  max-height: 200px;
+  padding-left: 10px;
+  background-color: #a09be9;
+  box-sizing: border-box;
+  color: aliceblue;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 10px 10px 16px -11px rgba(0, 0, 0, 0.75);
+}
+
+.header .cards div img {
+  width: 100px;
+}
+
+.header .calendar {
+  background-color: #242730;
+  height: 300px;
+  color: red;
+  margin: 2rem;
+}
+
+.header .calendar div + div {
+  background-color: #f6fcff;
+}
+
+.header .calendar p {
+  color: aqua;
+}
+
+.header .calendar button:hover {
+  color: green;
+  color: #f6fcff;
+}
+
+.notes {
+  max-width: 600px;
+  background-color: #242730;
+  margin-left: 2rem;
+}

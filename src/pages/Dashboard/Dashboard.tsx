@@ -5,6 +5,9 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
 import { Modal } from "../../components/Modal";
+import { Highlighter } from "../../components/Highlighter";
+
+import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 
 export function Dashboard({ user }: any) {
   const [date, setDate] = useState(new Date());
@@ -13,6 +16,8 @@ export function Dashboard({ user }: any) {
   const onChange = (newDate: any) => {
     setDate(newDate);
   };
+
+  const { documents: notes } = useFetchDocuments("notes", null, user.uid);
 
   return (
     <main>
@@ -33,8 +38,13 @@ export function Dashboard({ user }: any) {
           value={date}
         />
       </header>
-      <main className={styles.notes}>
-        <h1>Anotações</h1>
+      <main>
+        <h1 className={styles.notes}>Anotações</h1>
+
+        {notes &&
+          notes.map((note: any) => (
+            <Highlighter title={note.title} text={note.note} key={note.title} />
+          ))}
       </main>
       {modalOn && <Modal setModalOn={setModalOn} user={user} />}
     </main>

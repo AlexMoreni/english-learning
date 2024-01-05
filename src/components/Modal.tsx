@@ -39,6 +39,8 @@ export function Modal({ setModalOn, user }: any) {
       <input
         type="text"
         className={styles.inputModal}
+        minLength={3}
+        maxLength={15}
         onChange={(e) => setTitle(e.target.value)}
       />
 

@@ -1,0 +1,66 @@
+.modal {
+  width: 50%;
+  background-color: #242730;
+  color: #fff;
+  margin: 0 auto;
+  border: 2px solid #fff;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inputModal,
+.textareaModal {
+  min-width: 100%;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.textareaModal {
+  resize: none;
+}
+
+.closeModal {
+  width: 25px;
+  height: 25px;
+  background-color: #242730;
+  border-radius: 1rem;
+  border: 2px solid #fff;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeModal:hover {
+  background-color: #dc3545;
+  outline: 1px solid #242730;
+}
+
+.btnSubmit {
+  font-weight: bold;
+  background-color: #a09be9;
+  margin: 1rem auto 0;
+  border: 2px solid #fff;
+  border-radius: 0.5rem;
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+
+  transition: 0.5s;
+}
+
+.btnSubmit:hover {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+}

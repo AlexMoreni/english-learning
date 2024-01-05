@@ -11,6 +11,10 @@
   gap: 30px;
 }
 
+.header .cards div:hover {
+  filter: brightness(0.9);
+}
+
 .header .cards div {
   width: 300px;
   max-height: 200px;
@@ -30,25 +34,21 @@
 .header .calendar {
   background-color: #242730;
   height: 300px;
-  color: red;
+  color: #000;
   margin: 2rem;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 16px -11px rgba(0, 0, 0, 0.75);
 }
 
 .header .calendar div + div {
-  background-color: #f6fcff;
-}
-
-.header .calendar p {
-  color: aqua;
-}
-
-.header .calendar button:hover {
-  color: green;
-  color: #f6fcff;
+  background-color: #a09be9;
 }
 
 .notes {
   max-width: 600px;
   background-color: #242730;
   margin-left: 2rem;
+  color: #fff;
+  border-radius: 4px;
+  padding-left: 6px;
 }

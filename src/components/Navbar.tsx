@@ -45,7 +45,7 @@ export function Navbar({ user }: any) {
           <>
             <li>
               <NavLink
-                to="/"
+                to="/dashboard"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 <img src="home.svg" alt="Home" />

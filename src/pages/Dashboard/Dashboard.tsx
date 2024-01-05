@@ -6,7 +6,7 @@ import "react-calendar/dist/Calendar.css";
 
 import { Modal } from "../../components/Modal";
 
-export function Dashboard() {
+export function Dashboard({ user }: any) {
   const [date, setDate] = useState(new Date());
   const [modalOn, setModalOn] = useState<Boolean>(false);
 
@@ -36,7 +36,7 @@ export function Dashboard() {
       <main className={styles.notes}>
         <h1>Anotações</h1>
       </main>
-      {modalOn && <Modal setModalOn={setModalOn} />}
+      {modalOn && <Modal setModalOn={setModalOn} user={user} />}
     </main>
   );
 }

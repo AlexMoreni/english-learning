@@ -43,7 +43,12 @@ export function Dashboard({ user }: any) {
 
         {notes &&
           notes.map((note: any) => (
-            <Highlighter title={note.title} text={note.note} key={note.title} />
+            <Highlighter
+              title={note.title}
+              text={note.note}
+              id={note.id}
+              key={note.title}
+            />
           ))}
       </main>
       {modalOn && <Modal setModalOn={setModalOn} user={user} />}

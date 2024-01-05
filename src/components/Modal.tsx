@@ -4,9 +4,16 @@ import { useState, FormEvent } from "react";
 
 import styles from "./Modal.module.css";
 
-export function Modal({ setModalOn, user }: any) {
-  const [title, setTitle] = useState<string>("");
-  const [note, setNote] = useState<string>("");
+export function Modal({
+  setModalOn,
+  user,
+  title,
+  note,
+  setTitle,
+  setNote,
+  modeReading,
+  setModeReading,
+}: any) {
   const [formError, setFormError] = useState<null | string>(null);
   const { insertDocument } = useInsertDocument("notes");
 
@@ -31,6 +38,8 @@ export function Modal({ setModalOn, user }: any) {
     }
 
     setModalOn(false);
+    setTitle("");
+    setNote("");
   };
 
   return (
@@ -41,19 +50,40 @@ export function Modal({ setModalOn, user }: any) {
         className={styles.inputModal}
         minLength={3}
         maxLength={25}
+        value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
 
       <h2>Texto</h2>
-      <textarea
-        className={styles.textareaModal}
-        onChange={(e) => setNote(e.target.value)}
-      ></textarea>
 
-      <button className={styles.closeModal} onClick={() => setModalOn(false)}>
+      {!modeReading ? (
+        <textarea
+          className={styles.textareaModal}
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+        ></textarea>
+      ) : (
+        <textarea
+          className={styles.textareaModal}
+          style={{ height: "150px" }}
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+        ></textarea>
+      )}
+
+      <button
+        className={styles.closeModal}
+        onClick={() => {
+          setModalOn(false);
+          setTitle("");
+          setNote("");
+          setModeReading(false);
+        }}
+      >
         X
       </button>
-      <button className={styles.btnSubmit}>Escrever</button>
+      {!modeReading && <button className={styles.btnSubmit}>Escrever</button>}
+
       {formError && (
         <p className="error" style={{ textAlign: "center" }}>
           {formError}

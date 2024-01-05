@@ -11,7 +11,10 @@ import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 
 export function Dashboard({ user }: any) {
   const [date, setDate] = useState(new Date());
-  const [modalOn, setModalOn] = useState<Boolean>(false);
+  const [modalOn, setModalOn] = useState<boolean>(false);
+  const [title, setTitle] = useState<string>("");
+  const [note, setNote] = useState<string>("");
+  const [modeReading, setModeReading] = useState<boolean>(false);
 
   const onChange = (newDate: any) => {
     setDate(newDate);
@@ -48,10 +51,25 @@ export function Dashboard({ user }: any) {
               text={note.note}
               id={note.id}
               key={note.title}
+              setModalOn={setModalOn}
+              setTitle={setTitle}
+              setNote={setNote}
+              setModeReading={setModeReading}
             />
           ))}
       </main>
-      {modalOn && <Modal setModalOn={setModalOn} user={user} />}
+      {modalOn && (
+        <Modal
+          setModalOn={setModalOn}
+          user={user}
+          title={title}
+          setTitle={setTitle}
+          note={note}
+          setNote={setNote}
+          modeReading={modeReading}
+          setModeReading={setModeReading}
+        />
+      )}
     </main>
   );
 }

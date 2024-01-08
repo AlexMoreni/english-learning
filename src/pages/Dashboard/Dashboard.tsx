@@ -9,6 +9,8 @@ import { Highlighter } from "../../components/Highlighter";
 
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 
+import { Link } from "react-router-dom";
+
 export function Dashboard({ user }: any) {
   const [date, setDate] = useState(new Date());
   const [modalOn, setModalOn] = useState<boolean>(false);
@@ -30,10 +32,12 @@ export function Dashboard({ user }: any) {
             <img src="/writing.png" alt="Lápis roxo" />
             <h2>Escrever</h2>
           </div>
-          <div>
-            <img src="/exame.png" alt="Chapéu de formatura" />
-            <h2>Prova</h2>
-          </div>
+          <Link to="/test">
+            <div>
+              <img src="/exame.png" alt="Chapéu de formatura" />
+              <h2>Prova</h2>
+            </div>
+          </Link>
         </div>
         <Calendar
           className={styles.calendar}

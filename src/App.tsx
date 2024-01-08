@@ -19,6 +19,7 @@ import { Dashboard } from "./pages/Dashboard/Dashboard.tsx";
 import { Dictionary } from "./pages/Dictionary/Dictionary.tsx";
 import { Explore } from "./pages/Explore/Explore.tsx";
 import { CreateWord } from "./pages/CreateWord/CreateWord.tsx";
+import { Test } from "./pages/Test/Test.tsx";
 
 //hooks
 import { useState, useEffect } from "react";
@@ -77,6 +78,10 @@ function App() {
               element={
                 user ? <CreateWord user={user} /> : <Navigate to="/login" />
               }
+            ></Route>
+            <Route
+              path="/test"
+              element={user ? <Test user={user} /> : <Navigate to="/login" />}
             ></Route>
           </Routes>
         </div>

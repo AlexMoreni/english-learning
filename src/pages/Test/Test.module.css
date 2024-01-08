@@ -1,0 +1,111 @@
+.header {
+  padding-left: 2rem;
+}
+
+.cardTest {
+  width: 311px;
+  height: auto;
+  background-color: #242730;
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-top: 20px;
+  user-select: none;
+  margin: 0 auto;
+}
+
+.cardTest .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardTest .content img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cardTest .content .inputTest {
+  background-color: #fff;
+  color: #000;
+  margin: 1rem 10px;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid #fff;
+  padding: 2px;
+  border-radius: 0.3rem;
+}
+
+.cardTest .content p {
+  color: #dbcbcb;
+  margin-bottom: 0;
+}
+
+.cardTest .content p span {
+  font-weight: bold;
+}
+
+.cardTest .btnTest {
+  font-weight: bold;
+  background-color: #a09be9;
+  margin: 1rem auto 0;
+  border: 2px solid #fff;
+  border-radius: 0.5rem;
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+
+  transition: 0.5s;
+}
+
+.cardTest .btnTest:hover {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+
+.resultPainel {
+  width: 80%;
+  color: #fff;
+  background-color: #242730;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: 2px solid #a09be9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 10px 10px 16px -11px rgba(0, 0, 0, 0.75);
+}
+
+.btnBack {
+  margin: 0 auto 1rem;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+}
+
+.btnBack:hover {
+  filter: brightness(0.9);
+}
+
+.wordNotFound {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.wordNotFound h1 {
+  text-transform: uppercase;
+}
+
+.wordNotFound div {
+  display: flex;
+  gap: 30px;
+}

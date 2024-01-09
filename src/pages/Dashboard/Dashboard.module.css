@@ -3,12 +3,30 @@
   display: flex;
   padding: 0 2rem;
   justify-content: space-between;
+
+  @media (max-width: 480px) {
+    padding: 0 1rem;
+    height: 17vh;
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    padding: 0 1rem;
+    height: 23vh;
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    height: 20vh;
+  }
 }
 
 .header .cards {
   display: flex;
   align-items: center;
   gap: 30px;
+
+  @media (max-width: 480px) {
+    margin: 0 auto;
+  }
 }
 
 .header .cards div:hover {
@@ -25,10 +43,27 @@
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 10px 10px 16px -11px rgba(0, 0, 0, 0.75);
+
+  @media (max-width: 480px) {
+    width: 150px;
+    height: 90px;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: 260px;
+  }
 }
 
 .header .cards div img {
   width: 100px;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 }
 
 .header .calendar {
@@ -38,6 +73,14 @@
   margin: 2rem;
   border-radius: 1rem;
   box-shadow: 10px 10px 16px -11px rgba(0, 0, 0, 0.75);
+
+  @media (max-width: 991px) {
+    display: none;
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    width: 300px;
+  }
 }
 
 .header .calendar div + div {
@@ -51,4 +94,9 @@
   color: #fff;
   border-radius: 4px;
   padding-left: 6px;
+
+  @media (max-width: 767px) {
+    max-width: 90%;
+    margin-left: 1rem;
+  }
 }

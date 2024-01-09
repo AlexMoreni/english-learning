@@ -1,5 +1,16 @@
 .create_word {
   text-align: center;
+
+  @media (max-width: 480px) {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+.create_word form {
+  @media (max-width: 480px) {
+    max-width: 300px;
+  }
 }
 
 .create_word h2 {

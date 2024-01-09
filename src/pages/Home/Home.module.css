@@ -1,9 +1,31 @@
+.container_responsive {
+  @media (max-width: 767px) {
+    display: flex;
+    max-width: 100%;
+    flex-direction: column;
+    gap: 60px;
+  }
+}
+
 .container_content {
   min-height: 80vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1.5em;
+
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    padding: 0rem;
+    min-height: 20vh;
+  }
+
+  @media (min-width: 1200px) and (max-width: 1919px) {
+    min-height: 75vh;
+  }
 }
 
 .container_content div {
@@ -11,12 +33,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 1199px) {
+    max-width: 100%;
+    text-align: center;
+  }
 }
 
 .container_content div h1 {
   width: 545px;
-  font-size: 3.2em;
+  font-size: 3.1em;
   margin-bottom: 18px;
+
+  @media (max-width: 480px) {
+    max-width: 100%;
+    font-size: 1.6rem;
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    max-width: 100%;
+    font-size: 2.3rem;
+  }
 }
 
 .container_content div p {
@@ -37,3 +74,23 @@
 .container_content div .buttonStart:hover {
   background-color: rgb(67, 58, 199);
 }
+
+.container_content img {
+  @media (max-width: 480px) {
+    width: 300px;
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    width: 500px;
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    width: 450px;
+  }
+}
+
+/*Olhar o small device, erro de overflow-x, que ~e a navbar*/

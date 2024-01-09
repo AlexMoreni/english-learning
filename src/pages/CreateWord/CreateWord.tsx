@@ -56,6 +56,7 @@ export function CreateWord({ user }: any) {
             placeholder="Qual é a palavra"
             onChange={(e) => setWord(e.target.value)}
             value={word}
+            autoComplete="off"
           />
         </label>
         <label>
@@ -67,6 +68,7 @@ export function CreateWord({ user }: any) {
             placeholder="Qual é a tradução"
             onChange={(e) => setTranslation(e.target.value)}
             value={translation}
+            autoComplete="off"
           />
         </label>
         <label>
@@ -78,6 +80,7 @@ export function CreateWord({ user }: any) {
             placeholder="Insira uma imagem"
             onChange={(e) => setImage(e.target.value)}
             value={image}
+            autoComplete="off"
           />
         </label>
         {!response.loading && <button className="btn">Salvar</button>}

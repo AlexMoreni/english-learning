@@ -10,7 +10,7 @@ import {
 
 export const useFetchDocuments = (
   docCollection: string,
-  search = null,
+  search: string | null = null,
   uid = null
 ) => {
   const [documents, setDocuments] = useState<any>(null);
@@ -36,7 +36,7 @@ export const useFetchDocuments = (
         if (search) {
           q = await query(
             collectionRef,
-            where("word", "array-contains", search),
+            where("word", "==", search),
             orderBy("createdAt", "desc")
           );
         } else if (uid) {

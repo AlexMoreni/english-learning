@@ -1,6 +1,8 @@
 import styles from "./Home.module.css";
 
-export function Home() {
+import { Link } from "react-router-dom";
+
+export function Home({ user }: any) {
   return (
     <>
       <div className={styles.container_content}>
@@ -11,7 +13,15 @@ export function Home() {
             Tempos de aprendizagem flexíveis e materiais para todos os níveis
             farão com que você fale com confiança rapidamente.
           </p>
-          <button>Comece a aprender</button>
+          {user ? (
+            <Link to="/dashboard" className={styles.buttonStart}>
+              Comece a aprender
+            </Link>
+          ) : (
+            <Link to="/register" className={styles.buttonStart}>
+              Comece a aprender
+            </Link>
+          )}
         </div>
       </div>
       <div
@@ -26,7 +36,15 @@ export function Home() {
             se sentirá confiante para entender, falar bem e ser compreendido em
             qualquer lugar do mundo.
           </p>
-          <button>Comece a aprender</button>
+          {user ? (
+            <Link to="/dashboard" className={styles.buttonStart}>
+              Comece a aprender
+            </Link>
+          ) : (
+            <Link to="/register" className={styles.buttonStart}>
+              Comece a aprender
+            </Link>
+          )}
         </div>
         <img src="illustration-ads.png" alt="" />
       </div>

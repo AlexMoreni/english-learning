@@ -14,8 +14,7 @@ export function Test({ user }: any) {
 
   function testWord() {
     if (
-      wordInput.toLocaleLowerCase() ===
-      words[index].translation.toLocaleLowerCase()
+      wordInput.toLocaleLowerCase() === words[index].word.toLocaleLowerCase()
     ) {
       setPoints(points + 1);
     }
@@ -58,7 +57,7 @@ export function Test({ user }: any) {
               <div className={styles.content}>
                 <img src={words[index].image} alt="" />
                 <p>
-                  <span>Palavra:</span> {words[index].word}
+                  <span>Palavra:</span> {words[index].translation}
                 </p>
                 <input
                   type="text"

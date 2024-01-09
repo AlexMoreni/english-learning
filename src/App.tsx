@@ -40,15 +40,13 @@ function App() {
     });
   }, [auth]);
 
-  console.log(user);
-
   return (
     <AuthProvider value={user}>
       <Router>
         <Navbar user={user} />
         <div className="container">
           <Routes>
-            <Route path="/" element={<Home />}></Route>
+            <Route path="/" element={<Home user={user} />}></Route>
             <Route
               path="/register"
               element={!user ? <Register /> : <Navigate to="/dashboard" />}

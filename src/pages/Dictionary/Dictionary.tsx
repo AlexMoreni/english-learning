@@ -7,15 +7,20 @@ import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 import { Card } from "../../components/Card";
 
 export function Dictionary({ user }: any) {
-  const [query, setQuery] = useState<string>("");
+  const [search, setSearch] = useState<string>("");
+
   const { documents: words, loading } = useFetchDocuments(
     "words",
-    null,
+    search ? search : null,
     user.uid
   );
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (search) {
+      console.log(words);
+    }
   };
 
   return (
@@ -31,7 +36,7 @@ export function Dictionary({ user }: any) {
           <input
             type="text"
             placeholder="Procurar palavras..."
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => setSearch(e.target.value)}
           />
           <button className="btn btn-datk">Pesquisar</button>
         </form>

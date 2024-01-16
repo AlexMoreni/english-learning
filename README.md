@@ -1,27 +1,50 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# English Learning 🇺🇸
 
-Currently, two official plugins are available:
+Bem-vindo ao English Learning, a plataforma revolucionária que vai além do ensino tradicional para proporcionar uma jornada envolvente e eficaz no aprendizado do inglês. Inspirado pela paixão por conectar pessoas através da linguagem, o English Learning oferece uma experiência dinâmica e personalizada que capacita os alunos a dominar o inglês de forma autêntica.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Funcionalidades 🚀
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Dicionário com suas próprias palavras
+- Autenticação de usuários
+- Teste para avaliar seu inglês
+- Área para treinar/escrever seus textos
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+## Rodando localmente ⚙️
+
+Clone o projeto
+
+```bash
+  git clone https://github.com/AlexMoreni/english-learning.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Entre no diretório do projeto
+
+```bash
+  cd english-learning
+```
+
+Instale as dependências
+
+```bash
+  npm install
+```
+
+Inicie o servidor
+
+```bash
+  npm run dev
+```
+
+
+## Screenshots 📷
+
+![App Screenshot](https://www.gov.br/agricultura/pt-br/assuntos/riscos-seguro/imagens/em_construao.png/@@images/image.png)
+
+
+## Autores 📍
+
+- [@Alex Moreni](https://github.com/AlexMoreni)
+

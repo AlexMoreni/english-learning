@@ -42,6 +42,14 @@ export function Modal({
     setNote("");
   };
 
+  const modal = document.querySelectorAll("._modal_taytw_1");
+
+  document.addEventListener("click", (e) => {
+    if (e.target !== modal[0]) {
+      console.log("a");
+    }
+  });
+
   return (
     <form className={styles.modal} onSubmit={handleSubmit}>
       <h2>Título</h2>

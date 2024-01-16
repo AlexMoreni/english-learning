@@ -41,7 +41,7 @@ Inicie o servidor
 
 ## Screenshots 📷
 
-![App Screenshot](https://www.gov.br/agricultura/pt-br/assuntos/riscos-seguro/imagens/em_construao.png/@@images/image.png)
+![App Screenshot](https://media.licdn.com/dms/image/D4E22AQHkV-B-sr_nVQ/feedshare-shrink_800/0/1705419187880?e=1708560000&v=beta&t=_JWDzt7novYty4u3edspWrcl_vS4XJ3IhLxyKXpZCkY)
 
 
 ## Autores 📍

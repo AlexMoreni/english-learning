@@ -10,6 +10,7 @@ export function Test({ user }: any) {
   const [index, setIndex] = useState<number>(0);
   const [points, setPoints] = useState<number>(0);
   const [resultPainel, setResultPainel] = useState<boolean>(false);
+  const [wordsError, setWordsError] = useState<string[]>([]);
   const { documents: words } = useFetchDocuments("words", null, user.uid);
 
   function testWord() {
@@ -17,6 +18,8 @@ export function Test({ user }: any) {
       wordInput.toLocaleLowerCase() === words[index].word.toLocaleLowerCase()
     ) {
       setPoints(points + 1);
+    } else {
+      setWordsError((prevError) => [...prevError, words[index].word]);
     }
 
     if (index === words.length - 1) {
@@ -81,6 +84,21 @@ export function Test({ user }: any) {
               <p>
                 Porcentagem de acerto:{" "}
                 {((points / words.length) * 100).toFixed(2)}%
+              </p>
+              <p>
+                <span style={{ color: "#8179ec", fontWeight: "bold" }}>
+                  Palavras que você errou:
+                </span>{" "}
+                {wordsError.length > 0 ? (
+                  <>
+                    {wordsError.slice(0, -1).map((word, index) => (
+                      <span key={index}>{word}, </span>
+                    ))}
+                    <span>{wordsError[wordsError.length - 1]}</span>
+                  </>
+                ) : (
+                  "Nenhuma palavra errada."
+                )}
               </p>
               <Link to="/dashboard" className={styles.btnBack}>
                 Voltar
